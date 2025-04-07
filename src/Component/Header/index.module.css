@@ -1,0 +1,18 @@
+.header{
+   .part1{
+    background-color: #b87e12;
+    padding: 8px;
+    p{
+        font-size:1.5rem;
+        font-weight:400 ;
+    }
+   }
+   .part2{
+    h1{
+      font-size:24px ;
+      color: #2d2d2c;
+      font-weight: 700;
+      margin-left:700px;
+    }
+   }
+}
