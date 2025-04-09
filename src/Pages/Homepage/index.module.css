@@ -2,6 +2,7 @@
 .parent {
   min-height: 100vh;
   max-height: 90%;
+  font-family: "Tajawal", sans-serif;
   #bgimg {
     background-image: url(../../assets/slider-bg.jpg);
     background-position: 50%;
@@ -10,7 +11,7 @@
     max-height: 90%;
   }
   #sectionBaby {
-    background-color: #252525;
+    background-color: #734079;
     height: 230px;
     margin-top: -200px;
     overflow: hidden;
@@ -32,7 +33,7 @@
     }
 
     #cardbaby:hover {
-      background-color: #82c419;
+      background-color: #e8b33c;
       transform: scale(1.2);
       /* padding: 20px; */
     }
@@ -48,6 +49,7 @@
     max-width: 40%;
     min-height: 497px;
     max-height: 90%;
+    object-fit: cover;
     img {
       width: 100%;
       height: 100%;
@@ -61,32 +63,47 @@
     max-height: 90%;
     min-width: 571px;
     max-width: 46%;
-    background-color: #252525;
+    background-color: white;
+    border:  2px solid #808b8d;
     margin: 25px 0;
     h2 {
-      font-size: 2rem;
-      font-weight: 500;
+      
+      font-size: 22pt;
+      font-weight: 600;
+      color:#734079;
     }
     p {
       font-size: 1rem;
+      color: #323232;
+
     }
     span {
-      color: #82c419;
+      color: #734079;
+      font-weight: 600;
     }
-    hr {
-      border: 1px solid #82c419;
+    /* hr {
+      border: 1px solid #734079;
       width: 20%;
-    }
+    } */
   }
   #Babysitters {
- 
     padding: 70px;
-    background-color: #252525;
+    background: linear-gradient(
+      rgba(180, 180, 190, 0.7),
+      rgba(255, 255, 255, 0.7)
+    );
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     #sitters {
       font-size: 2rem;
       font-weight: 500;
       min-width: 750px;
       max-width: 90%;
+      
+      h2 {
+        color: #734079;
+      }
     }
     p {
       font-size: 1rem;
@@ -101,10 +118,11 @@
     }
     .govern {
       transition: all 0.1s ease-in-out;
+      background-color: transparent;
     }
 
     .govern:hover {
-      border: 3px solid #82c419;
+      border: 3px solid #734079;
     }
 
     .govern span {
@@ -112,11 +130,11 @@
     }
 
     .govern:hover span {
-      color: #82c419 !important;
+      color: #734079 !important;
     }
-    
   }
   #ourTeams {
+    padding: 100px 0 !important;
     #descript {
       h2 {
         font-size: 2rem;
@@ -133,7 +151,6 @@
       border: none;
       padding-right: 15px;
       outline: none;
- 
     }
     #twoinput {
       input {
@@ -153,11 +170,12 @@
     }
   }
   #infograp {
-    padding: 100px 0;
-   
+    /* padding: 100px 0; */
+
     p {
       font-size: 20px;
-      color: #808b8d;
+      color: #323232;
+      padding: 0 15px;
     }
     #borderimg {
       border: 1px solid;
@@ -176,7 +194,12 @@
   }
   #textinfo {
     position: relative;
-   
+    font-family: "Tajawal", sans-serif;
+    h1{
+      font-size: 22pt;
+      font-weight: 600;
+      color: #734079;
+    }
   }
   #textinfo::before {
     position: absolute;
@@ -185,7 +208,7 @@
     height: 2px;
     top: 5px;
     left: -40px;
-    background:#82c419;
+    background: #734079;
     z-index: -1;
   }
   #textinfo::after {
@@ -195,16 +218,17 @@
     height: 2px;
     bottom: 5px;
     left: -60px;
-    background: #82c419;
+    background: #734079;
+  
     z-index: -1;
   }
-  #allimg{
+  #allimg {
     padding: 100px 0;
-    .widthbord{
+    .widthbord {
       width: 318px;
     }
     #borderimg {
-      border: 1px solid #82c419;
+      border: 1px solid #808b8d;
       transition: border 0.3s ease, transform 0.3s ease;
       overflow: hidden;
     }
@@ -218,5 +242,21 @@
       transform: scale(1.1);
     }
   }
-  
+  .bgsection2{
+    background: linear-gradient(rgba(200, 200, 200, .7), rgba(255, 255, 255, .7)), url(../../assets/Larg2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 350px;
+    h1{
+       color: #734079;
+       font-size: 2rem;
+    }
+  }
+  .divicon{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    margin-top: -60px !important;
+  }
 }

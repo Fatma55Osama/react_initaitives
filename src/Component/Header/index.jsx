@@ -13,7 +13,7 @@ export default function Header() {
                 <div className=' col-1 d-flex justify-content-center'>
                     <img src={logo} width={69} alt="" />
                 </div>
-                <div className=' col-8 text-white me-4 d-flex justify-content-between '>
+                <div className=' col-8 me-4 d-flex justify-content-between '>
                          <p>تواصل معنا</p>
                         <p> الركن الإعلامي</p>
                         <p>خدمات المباردة</p>
@@ -25,7 +25,7 @@ export default function Header() {
             </div>
             <div className={styles.part2 + " col-12 d-flex flex-row "}>
                 <div className='col-12'>
-                    <div className='co-11  py-4 px-4 d-flex align-items-center justify-content-between'>
+                    {/* <div className='co-11  py-4 px-4 d-flex align-items-center justify-content-between'>
                         <div className='text-center '>
                         <h1 className='text-center'>PrimeCare </h1>
                         </div>
@@ -36,7 +36,7 @@ export default function Header() {
                             </div>
                             <IoSearch style={{fontSize:"20px"}} />
                             </div>
-                    </div>
+                    </div> */}
                 </div>
 
             </div>

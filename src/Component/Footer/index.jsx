@@ -6,8 +6,8 @@ import { IoIosArrowForward } from 'react-icons/io';
 export default function Footer() {
   return (
     <div className={styles.parentfooter}>
-      <div className='container d-flex justify-content-between text-end py-5 '>
-        <div className='d-flex flex-column gap-3'>
+      <div className='container d-flex flex-column justify-content-end text-end py-5 '>
+        {/* <div className='d-flex flex-column gap-3'>
           <h2>النشرة الاخبارية</h2>
           <input type="email" placeholder='ادخل الايميل الخاص بك' className='py-2 px-3 text-end' />
           <div className=''>
@@ -29,7 +29,8 @@ export default function Footer() {
             </div>
 
           </ul>
-        </div>
+        </div> */}
+
         <div className='d-flex flex-column  gap-3'>
           <h2>العنوان</h2>
           <ul className='d-flex flex-column align-items-end gap-3'>
@@ -37,6 +38,18 @@ export default function Footer() {
             <li className='d-flex align-items-center gap-2'>02050524225 <MdLocalPhone style={{ fontSize: "24px" }} /></li>
             <li className='d-flex align-items-center gap-2'>npc@gov.eg <MdEmail style={{ fontSize: "24px" }} /></li>
           </ul>
+        </div>
+        <div className='col-12 d-flex justify-content-end align-items-center gap-2 mt-3' id={styles.nav}>
+          <div className='col-9  d-flex flex-wrap justify-content-end align-items-center gap-2 mt-4'>
+            <span>مركز المعلومات ودعم اتخاذ القرار التابع لمجلس الوزراء</span>
+            جميع الحقوق محفوظة. تم التطوير بواسطة,
+            <div className='d-flex align-items-center gap-1'>
+              <span>مبادرة الألف يوم الذهبية</span>
+              ©
+            </div>
+
+          </div>
+
         </div>
       </div>
     </div>

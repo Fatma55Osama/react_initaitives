@@ -9,17 +9,21 @@ import person1 from '../../assets/team1.jpg';
 import person2 from '../../assets/team2.jpg';
 import person3 from '../../assets/team3.jpg';
 import person4 from '../../assets/team4.jpg';
+import team1 from '../../assets/team-1.jpg'
+import team2 from '../../assets/team-2.jpg'
+import team3 from '../../assets/team-3.jpg'
+import team4 from '../../assets/team-4.jpg'
+
 import { FaFacebookF, FaLinkedinIn } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 
 export default function SilderTeam() {
     const [team, setTeam] = useState([
-        { img: person1, name: 'مريم أحمد', role: 'مستشارة صحية' },
-        { img: person2, name: 'سارة محمود', role: 'منظمة فعاليات' },
-        { img: person3, name: 'نور خالد', role: 'أخصائية تغذية' },
-        { img: person4, name: 'فاطمة محمد', role: 'مديرة مشاريع' },
-        { img: person3, name: 'نور خالد', role: 'أخصائية تغذية' },
-        { img: person4, name: 'فاطمة محمد', role: 'مديرة مشاريع' },
+        { img: team1, name: 'أ. نسرين حسن', role: 'رئيسة التمريض' },
+        { img: team2, name: 'د. سامح أبو النجا', role: 'أخصائي طب الأطفال' },
+        { img: team3, name: 'د. منى مصطفى', role: 'أخصائي النساء والتوليد' },
+        // { img: team4, name: 'فاطمة محمد', role: 'مديرة مشاريع' },
+        { img: team4, name: 'د. محمد السيد', role: 'أخصائي أمراض النساء' },
     ]);
 
     return (
@@ -38,9 +42,9 @@ export default function SilderTeam() {
                     <SwiperSlide key={index}>
                         <div className={styles.coverteam}>
                             <div className="position-relative">
-                                <img src={el.img} width={327} height={353} alt={el.name} className="w-100 h-100 object-fit-cover" />
+                                <img src={el.img} width={327} height={340} alt={el.name} className=" object-fit-cover" />
                             </div>
-                            <div className="position-absolute d-flex flex-column ms-5 text-center rounded col-9 bottom-0 bg-dark text-white p-2 gap-3" id={styles.information}>
+                            <div className="position-absolute d-flex flex-column ms-3 text-center rounded col-8 bottom-0 bg-dark text-white p-2 gap-3" id={styles.information}>
                                 <h3 className="m-0">{el.name}</h3>
                                 <p className="m-0">{el.role}</p>
                                 <div className=' d-flex justify-content-center gap-3 '>

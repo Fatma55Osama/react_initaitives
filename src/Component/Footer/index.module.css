@@ -1,6 +1,10 @@
 .parentfooter{
-    background-color: #252525;
     color: white;
+    font-family: "Tajawal", sans-serif !important;
+    background: linear-gradient(rgba(20, 20, 31, .7), rgba(20, 20, 31, .7)), url(../../assets/bg2.png);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
     ul{
         padding: 0;
         li{
@@ -15,5 +19,13 @@
     button{
         background-color: #82c419;
         border: none;
+    }
+    #nav{
+        font-size: 18px;
+        border-top: 1px solid rgba(256, 256, 256, .1);
+        span{
+            color: #e8b33c;
+            border-bottom: 1px solid #dee2e6 ;
+        }
     }
 }
