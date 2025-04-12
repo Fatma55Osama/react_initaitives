@@ -6,12 +6,13 @@ import { FaUserAlt } from "react-icons/fa";
 import { IoSearch } from 'react-icons/io5';
 import logo from '../../assets/1000Logo.png'
 export default function Header() {
+    
     return (
-        <div className={styles.header + ' col-12'}>
-            <div className={styles.part1 + " d-flex  align-items-center align-content-between justify-content-between gap-5"}>
+        <div className={styles.header + ' col-12 '}>
+            <div className={styles.part1 + " d-flex   align-items-center align-content-between justify-content-between gap-5 "}>
                 
-                <div className=' col-1 d-flex justify-content-center'>
-                    <img src={logo} width={69} alt="" />
+                <div className='  ms-3 justify-content-center '>
+                    <img src={logo} width={100} alt="" />
                 </div>
                 <div className=' col-8 me-4 d-flex justify-content-between '>
                          <p>تواصل معنا</p>

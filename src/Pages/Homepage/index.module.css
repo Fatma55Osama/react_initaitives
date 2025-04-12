@@ -15,6 +15,8 @@
     height: 230px;
     margin-top: -200px;
     overflow: hidden;
+    z-index: 3;
+    position: relative;
 
     h3 {
       font-size: 1.5rem;
@@ -46,7 +48,7 @@
   }
   #imgmom {
     min-width: 400px;
-    max-width: 40%;
+    max-width: 50%;
     min-height: 497px;
     max-height: 90%;
     object-fit: cover;
@@ -181,9 +183,11 @@
       border: 1px solid;
       transition: border 0.3s ease, transform 0.3s ease;
       overflow: hidden;
+      width: 407px;
     }
     #img {
       transition: border 0.3s ease, transform 0.3s ease;
+      width: 100%;
     }
     #borderimg:hover {
       border: none;
@@ -259,4 +263,36 @@
     border-radius: 50%;
     margin-top: -60px !important;
   }
+}
+
+#fade-wrapper {
+  position: relative;
+}
+
+#fade-wrapper::before,
+#fade-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: 5;
+  height: 100%;
+  width: 300px;
+  pointer-events: none;
+}
+
+#fade-wrapper::before {
+ left: 0;
+  background: linear-gradient(to right, white 0%, transparent 100%);
+}
+
+#fade-wrapper::after {
+  right: 0;
+  background: linear-gradient(to left, white 0%, transparent 100%);
+}
+.wow {
+  visibility: hidden;
+}
+
+.wow.animate__animated {
+  visibility: visible;
 }

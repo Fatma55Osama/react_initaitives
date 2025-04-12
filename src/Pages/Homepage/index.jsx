@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Header from '../../Component/Header'
 import styles from './index.module.css'
 import SildeSwiper from '../../Component/SlideSwip'
@@ -30,17 +30,29 @@ import pr5 from '../../assets/pr5.png'
 import pr6 from '../../assets/about.jpg'
 import SwiperLink from '../../Component/SwiperLink'
 import { FaChild, FaFemale, FaUsers } from 'react-icons/fa'
-
+import WOW from 'wowjs'
+import AOS from 'aos';
+import Maymap from '../../Component/Maymap'
 export default function HomePage() {
   const [Baby, setBaby] = useState([{ img: pr5, title: 'المشورة الاسرية' }, { img: pr3, title: 'مشورة ما قبل الزواج' },
   { img: pr4, title: 'مشورة الحامل' },
   { img: babywalk, title: 'مشورة الاطفال' }])
   const [governorate, setGovernorate] = useState([{ img: goveren1, name: 'محافظة الاسكندرية' }, { img: goveren2, name: 'محافظة أسيوط' }, { img: goveren3, name: 'محافظة البحيرة' }, { img: goveren4, name: 'محافظة الدقهلية' }, { img: goveren5, name: 'محافظة الفيوم' }, { img: goveren6, name: 'محافظة القليوبية' }, { img: goveren7, name: 'محافظة كفر الشيخ' }, { img: goveren8, name: 'محافظة سوهاج' }])
   const data = [{ icon: <FaFemale />,bordercolor:"#734079",background:"#734079", number: " 689 ألف ", pargraph: "عدد المستفيدات من مشورة الحامل" }, { icon: <FaChild />,bordercolor:"#e8b33c",background:"#e8b33c", number: "783 ألف", pargraph: "عدد المستفيدين من مشورة الأطفال" }, { icon: <FaUsers />,bordercolor:"#734079",background:"#734079", number: "645 ألف", pargraph: "عدد المستفيدات من المشورة الأسرية" }]
+  // useEffect(() => {
+  //   AOS.init({
+  //     duration: 1000,
+  //     offset: 100, 
+  //     once: false,
+  //   });
+  //   return () => {
+  //     AOS.refresh(); // refresh animations when component unmounts
+  // };
+  // }, []);
   return (
     <div className={styles.parent}>
       <Header />
-      <div id={styles.bgimg}>
+      <div>
         <SildeSwiper />
       </div>
       <div className='col-12  py-3' id={styles.sectionBaby}>
@@ -62,11 +74,11 @@ export default function HomePage() {
       </div>
       <div className='col-12  ' id={styles.sectionAbout}>
         <div className='container py-3 d-flex justify-content-center'>
-          <div id={styles.imgmom}>
+          <div id={styles.imgmom} data-aos="fade-up" data-aos-offset="10" data-aos-delay="100"    data-aos-once="false">
             <img src={pr6} alt="" />
           </div>
-          <div className=' text-white d-flex text-end' id={styles.about}>
-            <div className='container  d-flex flex-column justify-content-center mx-2 '>
+          <div className=' text-white d-flex text-end  ' data-aos="fade-up" data-aos-offset="10" data-aos-delay="500"  data-aos-once="false"  id={styles.about}>
+            <div className='container   d-flex flex-column justify-content-center mx-2 '>
               <h2>المبادرة في السطور </h2>
               <p className='m-0 '>  المبادرة الألف يوم الذهبية مبادرة رئيس الجمهورية
                 تحت مظلة 100 مليون صحة، أطلق الدكتور خالد عبد الغفار وزير الصحة والسكان في 22/8/2023 مبادرة رئيس الجمهورية "الألف يوم الذهبية لتنمية الأسرة المصرية"، من أجل تحسين الخصائص السكانية كمًّا ونوعًا؛ لتحقيق التنمية، وتحسين معدلات الإنجاب.
@@ -94,13 +106,14 @@ export default function HomePage() {
       <div className='col-12' id={styles.Babysitters}>
         <div className='container Col-12 d-flex align-items-center'>
           <div className=' text-white d-flex ' id={styles.sitters}>
-            <div className='container text-end d-flex flex-column justify-content-center align-items-center gap-4 '>
-              <h2> مراكز المبادرة </h2>
+            <div className='container  text-end d-flex flex-column justify-content-center align-items-center gap-4 ' >
+              <h2  data-aos="fade-up" data-aos-offset="10" data-aos-delay="250" > مراكز المبادرة </h2>
 
               <div className='  col-12 d-flex flex-wrap  gap-3' >
                 {
                   governorate.map((el, index) => (
-                    <div key={index} className={`col-5 d-flex flex-column   d-flex justify-content-center align-items-center rounded py-2 gap-2 ${styles.govern}   `}>
+                    <div key={index} className={`col-5 d-flex flex-column   d-flex justify-content-center align-items-center rounded py-2 gap-2 ${styles.govern}  `}  data-aos="fade-up"
+                    data-aos-offset="10" data-aos-delay={`${index * 10000}`}>
                       <img src={el.img} width={60} height={80} alt="" />
                       <span className='text-black'>{el.name}</span>
                     </div>
@@ -113,7 +126,7 @@ export default function HomePage() {
 
           </div>
           <div className='d-flex justify-content-center align-items-center' id={styles.coverimg}>
-            <iframe
+            {/* <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7292976.845213789!2d25.58236680079767!3d26.807369200316565!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14368976c35c36e9%3A0x2c45a00925c4c444!2sEgypt!5e0!3m2!1sen!2seg!4v1743973127881!5m2!1sen!2seg"
               width="600"
               height="600"
@@ -121,7 +134,8 @@ export default function HomePage() {
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
+            ></iframe> */}
+            <Maymap/>
           </div>
         </div>
 
@@ -130,15 +144,15 @@ export default function HomePage() {
       <div className='col-12'>
         <div className='container text-center d-flex flex-column justify-content-center gap-4 ' id={styles.allimg}>
           <div className='d-flex justify-content-center '>
-            <div id={styles.textinfo} className='bg-white px-4'>
-              <h1>ألبوم الصور</h1>
+            <div id={styles.textinfo} className='bg-white px-4 ' >
+              <h1 data-aos="fade-up" data-aos-offset="10" data-aos-delay="450"  >ألبوم الصور</h1>
             </div>
           </div>
 
           <div className='d-flex  gap-4'>
             <div className='part1 col-6 d-flex flex-column gap-3'>
-              <div className='position-relative '>
-                <div className='col-12' id={styles.borderimg}>
+              <div className='position-relative' data-aos="zoom-in"  data-aos-once="false" data-aos-offset="10" data-aos-delay="100">
+                <div className='col-12 ' id={styles.borderimg}>
                   <img src={meet1} height={491} id={styles.img} alt="" />
                 </div>
                 <div className='position-absolute end-0 bottom-0 mb-3 me-3 px-3 py-1 bg-white'>
@@ -148,7 +162,7 @@ export default function HomePage() {
 
 
               <div className='col-12 d-flex gap-3'>
-                <div className='position-relative '>
+                <div className='position-relative' data-aos="zoom-in"  data-aos-offset="10" data-aos-delay="400" >
                   <div className={styles.widthbord + ' col-6'} id={styles.borderimg}>
                     <img src={meet2} height={274} width={359} id={styles.img} alt="" />
                   </div>
@@ -156,19 +170,19 @@ export default function HomePage() {
                     <h6>نائب وزير الصحة تناقش مع الجهات التنفيذية الخطة العاجلة لتحقيق أهداف الاستراتيجية الوطنية للسكان والتنمية 2030</h6>
                   </div>
                 </div>
-                <div className='position-relative '>
+                <div className='position-relative' data-aos="zoom-in"  data-aos-offset="10" data-aos-delay="600" >
 
                   <div className={styles.widthbord + ' col-6'} id={styles.borderimg}>
                     <img src={meet3} height={274} width={359} id={styles.img} alt="" />
                   </div>
                   <div className='position-absolute end-0 bottom-0 mb-3 mx-2  py-1 bg-white'>
-                    <h5>الخطة العاجلة لتحسين الخصائص السكانية في المناطق ذات المؤشرات المنخفضة تُعد نموذجًا رائدًا لضمان الحقوق الإنجابية وتعزيز تكامل جهود الدولة لتحقيق الأهداف الوطنية</h5>
+                    <h6>الخطة العاجلة لتحسين الخصائص السكانية في المناطق ذات المؤشرات المنخفضة تُعد نموذجًا رائدًا لضمان الحقوق الإنجابية وتعزيز تكامل جهود الدولة لتحقيق الأهداف الوطنية</h6>
                   </div>
                 </div>
               </div>
             </div>
             <div className='part2 col-5 flex-grow-1'>
-              <div className='position-relative '>
+              <div className='position-relative ' data-aos="zoom-in"  data-aos-offset="10" data-aos-delay="600" >
 
                 <div id={styles.borderimg}>
                   <img src={meet4} width={632} height={782} id={styles.img} alt="" />
@@ -184,21 +198,22 @@ export default function HomePage() {
       </div>
       <div className='col-12'>
         <div className='container  col-12 d-flex text-center flex-column  align-items-center  gap-5' id={styles.infograp}>
-          <div id={styles.textinfo} className='bg-white px-4'>
+          <div id={styles.textinfo} className='bg-white px-4 '>
 
-            <h1>إنفوجراف</h1>
+            <h1  data-aos="fade-up" data-aos-offset="10" data-aos-delay="100">إنفوجراف</h1>
           </div>
-          <div className=' col-9 d-flex justify-content-between'>
-            <div className='bg-white shadow d-flex flex-column gap-3'>
+          <div className=' col-8 d-flex justify-content-between'  data-aos="fade-up" data-aos-offset="10" data-aos-delay="450">
+     
+            <div className='  shadow d-flex flex-column gap-3' style={{width:"407px"}}>
               <div id={styles.borderimg}>
-                <img src={infograph1} id={styles.img} width={407} alt="" />
+              <img src={infograph1} id={styles.img}  alt="" />
               </div>
               <p>الوصول إلى خفض معدل الإنجاب بنسبة 7% عن العام الماضي </p>
 
             </div>
             <div className='bg-white shadow d-flex flex-column gap-3'>
               <div id={styles.borderimg}>
-                <img src={infograph2} id={styles.img} width={407} alt="" />
+                <img src={infograph2} id={styles.img} alt="" />
               </div>
               <p>التوسع في تقديم خدمات تنظيم الأسرة</p>
             </div>
@@ -213,19 +228,19 @@ export default function HomePage() {
       <div className='col-12'>
         <div className='container  d-flex flex-column justify-content-center align-items-center gap-5' id={styles.ourTeams}>
           <div className='d-flex flex-column justify-content-center  align-items-center text-center gap-4' id={styles.descript}>
-            <div id={styles.textinfo} className='bg-white px-4'>
-              <h1> المبادرة في أرقام</h1>
+            <div id={styles.textinfo} className='bg-white px-4 '>
+              <h1 className='wow  animate__animated animate__fadeInUp'> المبادرة في أرقام</h1>
             </div>
           </div>
           <div className='col-12 '>
-            <div className='container d-flex justify-content-between'>
+            <div className='container d-flex justify-content-between mt-5'>
               {
                 data.map((el, index) => (
-                  <div className=' d-flex flex-column justify-content-center align-items-center gap-3 py-4' style={{width:"400px",border:`1px solid ${el.bordercolor}`}}>
+                  <div className=' d-flex flex-column justify-content-center align-items-center gap-3 py-4 '  data-aos="fade-up" data-aos-offset="10" data-aos-delay={`${index * 700}`} style={{width:"400px",border:`1px solid ${el.bordercolor}`}}>
                     <div className={styles.divicon + " d-flex justify-content-center align-items-center" } style={{backgroundColor:el.background, fontSize:"40px", color:"white"}}>
                       {el.icon}
                     </div>
-                    <div className='text-center'>
+                    <div className='text-center mb-4'>
                     <h4>{el.number}</h4>
                      <span>{el.pargraph}</span>
                     </div>
@@ -246,7 +261,7 @@ export default function HomePage() {
             </div>
             {/* <p className='m-0'>يضم فريق المبادرة نخبة من الأطباء والمتخصصين في صحة الأم والطفل، يعملون بتكامل لتقديم الدعم والرعاية خلال الألف يوم الأولى</p> */}
           </div>
-          <div className='col-12'>
+          <div className='col-12 px-4' >
             <SilderTeam />
           </div>
         </div>
@@ -274,7 +289,7 @@ export default function HomePage() {
 
         </div>
       </div> */}
-      <div className='col-12'>
+      <div className='col-12' >
         <div className='container  d-flex flex-column justify-content-center align-items-center gap-4' id={styles.ourTeams}>
           <div className='d-flex flex-column justify-content-center  align-items-center text-center gap-4' id={styles.descript}>
             <div id={styles.textinfo} className='bg-white px-4'>
@@ -282,7 +297,7 @@ export default function HomePage() {
             </div>
             {/* <p className='m-0'>يضم فريق المبادرة نخبة من الأطباء والمتخصصين في صحة الأم والطفل، يعملون بتكامل لتقديم الدعم والرعاية خلال الألف يوم الأولى</p> */}
           </div>
-          <div className='col-12'>
+          <div className='col-12 ' id={styles['fade-wrapper']} >
             <SwiperLink />
           </div>
         </div>

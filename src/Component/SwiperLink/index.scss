@@ -1,15 +1,12 @@
 /* العنصر الافتراضي */
-.slide-content .inner-box {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    transition: 0.3s;
+
+  .swiper-slide-active .owl {
+    border-color: #734079 !important;
+    background-color: #734079;
+    color: white;
   }
   
-  /* العنصر النشط اللي في النص */
-  .swiper-slide-active .inner-box {
-    background-color: purple;
-    color: white;
-    transform: scale(1.05);
-  }
+  .swiper-slide-active .owl h3 {
+    color: white; 
+   }
+  

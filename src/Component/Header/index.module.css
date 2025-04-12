@@ -1,4 +1,10 @@
 .header{
+  position: sticky;
+  top: 0;
+  z-index: 500;
+  background-color: rgba(0, 0, 0, 0.1); 
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: white;
    .part1{
     background-color:#e8b33c;
     color: rgb(71, 71, 71);
@@ -9,7 +15,12 @@
         font-weight: 600;
     }
    }
+   .header.scrolled {
+    background-color: #e8b33c; /* اللون عند التمرير */
+    color: #2d2d2c; /* تغيير لون النص عند التمرير */
+  }
    .part2{
+  
     h1{
       font-size:24px ;
       color: #2d2d2c;
