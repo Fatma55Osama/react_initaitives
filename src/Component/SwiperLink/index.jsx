@@ -42,7 +42,7 @@ export default function SwiperLink() {
                 {
                     team.map((el, index) => (
                         <SwiperSlide key={index}>
-                            <div className={styles.coverteam + " py-5 d-flex justify-content-center"} data-aos="fade-up" data-aos-offset="20" data-aos-delay='800'>
+                            <div className={styles.coverteam + " py-5 d-flex justify-content-center"} data-aos="fade-up" data-aos-offset="20" data-aos-delay='500'>
                                 <div className={ styles.owl +' owl d-flex flex-column  justify-content-center align-items-center border gap-3'} >
                                     <div style={{borderRadius:"50%",width:"100px", height:"100px" , overflow:"hidden"}} className='bg-white d-flex justify-content-center align-items-center'>
                                         <img src={el.img} width={80} height={80} style={{objectFit:"contain"}} alt={el.name}  className=" object-fit-cover" />

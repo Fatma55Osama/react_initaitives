@@ -5,8 +5,12 @@
     padding: 0;
     box-sizing: border-box;
 }
-body{
-    min-height: 100vh;
+body,.App,.root{
+    min-height: 100vh !important;
     /* font-family: "Poppins", sans-serif; */
     font-family: "Tajawal", sans-serif;
+}
+.dropdown:hover .dropdown-menu {
+    display: block !important;      
+    margin-top: 0 !important;      
 }
