@@ -33,9 +33,10 @@ import { FaChild, FaFemale, FaUsers } from 'react-icons/fa'
 import WOW from 'wowjs'
 import AOS from 'aos';
 import Maymap from '../../Component/Maymap'
-import { useData, useInfograph } from '../../Store'
+import { useData, useInfograph, useNews } from '../../Store'
 export default function HomePage() {
   const { infograph } = useInfograph()
+  const {allnews}=useNews()
   const [Baby, setBaby] = useState([{ img: pr5, title: 'المشورة الاسرية' }, { img: pr3, title: 'مشورة ما قبل الزواج' },
   { img: pr4, title: 'مشورة الحامل' },
   { img: babywalk, title: 'مشورة الاطفال' }])
@@ -154,7 +155,27 @@ export default function HomePage() {
 
           <div className='d-flex  gap-4'>
             <div className='part1  col-6 d-flex flex-column gap-3'>
-              {
+              
+                {
+                  allnews.map((el,index)=>{
+                    if(index==0){
+                        return(
+                          <div key={el.newsId} className='position-relative'  data-aos="zoom-in" data-aos-once="false" data-aos-offset="10" data-aos-delay="100">
+                          <div className='col-12 ' id={styles.borderimg}>
+                            <img src={`/src/assets/${el.largPhoto}`} height={491} id={styles.img} alt="" />
+                          </div>
+                          <div className='position-absolute end-0 bottom-0 mb-3 me-3 px-3 py-1 bg-white'>
+                            <h5>{el.title}</h5>
+                          </div>
+                        </div>
+                    )
+                    }
+                  
+                  })
+                }
+              
+              {/* {
+
                 dataphotos.slice(0, 1).map((el, index) => (
                   <div className='position-relative' key={index} data-aos="zoom-in" data-aos-once="false" data-aos-offset="10" data-aos-delay="100">
                     <div className='col-12 ' id={styles.borderimg}>
@@ -165,9 +186,9 @@ export default function HomePage() {
                     </div>
                   </div>
                 ))
-              }
+              } */}
 
-              <div className='col-12 d-flex gap-3'>
+              {/* <div className='col-12 d-flex gap-3'>
                 {
                   dataphotos.slice(1, 3).map((el, index) => (
                     <div key={index} className='position-relative' data-aos="zoom-in" data-aos-offset="10" data-aos-delay="400" >
@@ -196,7 +217,7 @@ export default function HomePage() {
                     </div>
                   </div>
                 ))
-              }
+              } */}
 
 
             </div>

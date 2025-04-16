@@ -97,3 +97,14 @@ export const useInfograph = create((set) => ({
   infograph: [],
   setInfograph: (info) => set(() => ({ infograph: info })),
 }));
+
+export const useImportantlink = create((set) => ({
+  importantlink: [],
+  setImportantlink: (important) => set(() => ({ importantlink: important })),
+}));
+
+export const useNews = create((set) => ({
+  allnews: [],
+  setInews: (newwes) => set(() => ({ allnews: newwes })),
+}));
+
