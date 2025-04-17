@@ -21,13 +21,11 @@ import { useallActiveEmployees, usedomain } from '../../Store';
 
 export default function SilderTeam() {
     const {Employees} =useallActiveEmployees()
-    // useEffect(()=>{
-    //     getAllData.get_all_employess(domain).then((res)=>{
-    //         console.log(res)
-    //         setallEmployees(res)
-           
-    //     })
-    // },[])
+    const [filteremployess,setFilteremployess]=useState([])
+    useEffect(()=>{
+      let copyfilteremploy = Employees.filter((el)=>{return el.onMainPage && el.isActive})
+      setFilteremployess(copyfilteremploy)
+    },[Employees])
     return (
         <Swiper
             slidesPerView={4}
@@ -40,8 +38,7 @@ export default function SilderTeam() {
             className="mySwiper"
         >
             {
-                Employees.map((el, index) =>{ 
-                    console.log(el.empImage);
+                filteremployess.map((el, index) =>{ 
                    return(
                       <SwiperSlide key={el.empId} className='  d-flex justify-content-center  align-items-center' style={{height:"300px"}} >
                        

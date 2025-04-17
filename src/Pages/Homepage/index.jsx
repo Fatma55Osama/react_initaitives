@@ -33,17 +33,37 @@ import { FaChild, FaFemale, FaUsers } from 'react-icons/fa'
 import WOW from 'wowjs'
 import AOS from 'aos';
 import Maymap from '../../Component/Maymap'
-import { useData, useInfograph, useNews } from '../../Store'
+import { useAbout, useAwarnessMsg, useGovs, useInfograph, useNews } from '../../Store'
+import About from '../../Component/About'
 export default function HomePage() {
   const { infograph } = useInfograph()
-  const {allnews}=useNews()
+  const { allnews } = useNews()
+  const [filternews, setFilternews] = useState([])
+  const[filterinfograf,setFilterinfograf] =useState([])
+  const {allabout}=useAbout()
+  const {allawarness}=useAwarnessMsg()
+  const [filterAwarness,setFilterawarness] =useState([])
+  const {allgovs}=useGovs()
   const [Baby, setBaby] = useState([{ img: pr5, title: 'المشورة الاسرية' }, { img: pr3, title: 'مشورة ما قبل الزواج' },
   { img: pr4, title: 'مشورة الحامل' },
   { img: babywalk, title: 'مشورة الاطفال' }])
 
   const [governorate, setGovernorate] = useState([{ img: goveren1, name: 'محافظة الاسكندرية' }, { img: goveren2, name: 'محافظة أسيوط' }, { img: goveren3, name: 'محافظة البحيرة' }, { img: goveren4, name: 'محافظة الدقهلية' }, { img: goveren5, name: 'محافظة الفيوم' }, { img: goveren6, name: 'محافظة القليوبية' }, { img: goveren7, name: 'محافظة كفر الشيخ' }, { img: goveren8, name: 'محافظة سوهاج' }])
   const data = [{ icon: <FaFemale />, bordercolor: "#734079", background: "#734079", number: " 689 ألف ", pargraph: "عدد المستفيدات من مشورة الحامل" }, { icon: <FaChild />, bordercolor: "#e8b33c", background: "#e8b33c", number: "783 ألف", pargraph: "عدد المستفيدين من مشورة الأطفال" }, { icon: <FaUsers />, bordercolor: "#734079", background: "#734079", number: "645 ألف", pargraph: "عدد المستفيدات من المشورة الأسرية" }]
-  const { dataphotos } = useData()
+
+  useEffect(() => {
+      const filteredNew = allnews.filter((el) => { return el.onMainPage && el.isActive })
+      setFilternews(filteredNew)
+
+  }, [allnews])
+  useEffect(()=>{
+    let copyfilterAwarness =allawarness.filter((el)=>{return el.orderView && el.isActive})
+    setFilterawarness(copyfilterAwarness)
+  },[allawarness])
+  useEffect(()=>{
+    let copyfilterinfograf =infograph.filter((el)=>{return el.onMainPage && el.isActive})
+    setFilterinfograf(copyfilterinfograf)
+  },[infograph])
   // useEffect(() => {
   //   AOS.init({
   //     duration: 1000,
@@ -76,37 +96,37 @@ export default function HomePage() {
 
         </div>
       </div>
-      <div className='col-12  ' id={styles.sectionAbout}>
+      {/* <div className='col-12  ' id={styles.sectionAbout}>
         <div className='container py-3 d-flex justify-content-center'>
           <div id={styles.imgmom} data-aos="fade-up" data-aos-offset="10" data-aos-delay="100" data-aos-once="false">
             <img src={pr6} alt="" />
           </div>
           <div className=' text-white d-flex text-end  ' data-aos="fade-up" data-aos-offset="10" data-aos-delay="500" data-aos-once="false" id={styles.about}>
             <div className='container   d-flex flex-column justify-content-center mx-2 '>
-              <h2>المبادرة في السطور </h2>
-              <p className='m-0 '>  المبادرة الألف يوم الذهبية مبادرة رئيس الجمهورية
-                تحت مظلة 100 مليون صحة، أطلق الدكتور خالد عبد الغفار وزير الصحة والسكان في 22/8/2023 مبادرة رئيس الجمهورية "الألف يوم الذهبية لتنمية الأسرة المصرية"، من أجل تحسين الخصائص السكانية كمًّا ونوعًا؛ لتحقيق التنمية، وتحسين معدلات الإنجاب.
+              <h6>المبادرة في السطور </h6>
+              <h4>
+              الألف يوم الذهبية
 
-                تعد المبادرة من أهم مبادرات بناء الإنسان المصري؛ نظرًا لأنها تُمثل منهجًا شموليًّا لأول 1000 يوم من حياة الإنسان، بهدف رفع الوعي بأهمية الألف يوم الأولى من الحياة، حيث يتم تكوين 85% من قدرات الطفل العقلية والنفسية والجسدية خلال هذه الفترة الحيوية.
-
-                المشورة الأسرية
-
-                مشورة ماقبل الزواج
-
-                مشورة الحامل
-
-                مشورة الأطفال</p>
+              <span> مبادرة رئيس الجمهورية</span>
+              </h4>
+              {
+                allabout.map((el)=>(
+                  <p key={el.aboutId} className='m-0 mt-4'>{el.aboutText}  </p>
+                ))
+              }
+       
               <div className='d-flex align-items-center justify-content-end gap-2'>
                 <hr />
                 <div className='col-12 d-flex mt-5 justify-content-start'>
-                  <span className='text-start'>المزيد </span>
+                  <button className='text-start text-white py-2 px-3'>المزيد </button>
                 </div>
               </div>
             </div>
 
           </div>
         </div>
-      </div>
+      </div> */}
+      <About/>
       <div className='col-12' id={styles.Babysitters}>
         <div className='container Col-12 d-flex align-items-center'>
           <div className=' text-white d-flex ' id={styles.sitters}>
@@ -149,77 +169,67 @@ export default function HomePage() {
         <div className='container text-center d-flex flex-column justify-content-center gap-4 ' id={styles.allimg}>
           <div className='d-flex justify-content-center '>
             <div id={styles.textinfo} className='bg-white px-4 ' >
-              <h1 data-aos="fade-up" data-aos-offset="10" data-aos-delay="450"  >ألبوم الصور</h1>
+              <h1 data-aos="fade-up" data-aos-offset="10" data-aos-delay="450"  > الأخبار</h1>
             </div>
           </div>
 
           <div className='d-flex  gap-4'>
-            <div className='part1  col-6 d-flex flex-column gap-3'>
-              
-                {
-                  allnews.map((el,index)=>{
-                    if(index==0){
-                        return(
-                          <div key={el.newsId} className='position-relative'  data-aos="zoom-in" data-aos-once="false" data-aos-offset="10" data-aos-delay="100">
-                          <div className='col-12 ' id={styles.borderimg}>
-                            <img src={`/src/assets/${el.largPhoto}`} height={491} id={styles.img} alt="" />
-                          </div>
-                          <div className='position-absolute end-0 bottom-0 mb-3 me-3 px-3 py-1 bg-white'>
-                            <h5>{el.title}</h5>
-                          </div>
+            <div className='part1 col-6 d-flex flex-column gap-3'>
+
+              {filternews.map((el, index) => {
+               
+                if (index === 2) {
+                  return (
+                    <div key={el.newsId} className='position-relative' data-aos="zoom-in" data-aos-once="false" data-aos-offset="10" data-aos-delay="100">
+                      <div className='col-12' id={styles.borderimg}>
+                        <img src={`/assets/${el.smallPhoto}`} height={491} id={styles.img} alt="" />
+                      </div>
+                      <div className='position-absolute end-0 bottom-0 mb-3 me-3 px-3 py-1 bg-white'>
+                        <h6>{el.title}</h6>
+                      </div>
+                    </div>
+                  )
+                }
+
+                return null;  // باقي العناصر لا شيء هنا لأن هنعملهم تحت.
+              })}
+
+              <div className='col-12 d-flex gap-3'>
+                {allnews.map((el, index) => {
+                  if (index === 1 || index === 3) {
+                    return (
+                      <div key={el.newsId} className='position-relative' data-aos="zoom-in" data-aos-offset="10" data-aos-delay="400">
+                        <div className={styles.widthbord + ' col-6'} id={styles.borderimg}>
+                          <img src={`/assets/${el.smallPhoto}`} height={274} width={359} id={styles.img} alt="" />
                         </div>
+                        <div className='position-absolute end-0 bottom-0 mb-3 mx-3 py-1 bg-white'>
+                          <h6>{el.title}</h6>
+                        </div>
+                      </div>
                     )
-                    }
-                  
-                  })
-                }
-              
-              {/* {
-
-                dataphotos.slice(0, 1).map((el, index) => (
-                  <div className='position-relative' key={index} data-aos="zoom-in" data-aos-once="false" data-aos-offset="10" data-aos-delay="100">
-                    <div className='col-12 ' id={styles.borderimg}>
-                      <img src={el.img} height={491} id={styles.img} alt="" />
-                    </div>
-                    <div className='position-absolute end-0 bottom-0 mb-3 me-3 px-3 py-1 bg-white'>
-                      <h5>{el.text}</h5>
-                    </div>
-                  </div>
-                ))
-              } */}
-
-              {/* <div className='col-12 d-flex gap-3'>
-                {
-                  dataphotos.slice(1, 3).map((el, index) => (
-                    <div key={index} className='position-relative' data-aos="zoom-in" data-aos-offset="10" data-aos-delay="400" >
-                      <div className={styles.widthbord + ' col-6'} id={styles.borderimg}>
-                        <img src={el.img} height={274} width={359} id={styles.img} alt="" />
-                      </div>
-                      <div className='position-absolute end-0 bottom-0 mb-3 mx-3  py-1 bg-white'>
-                        <h6>{el.text}</h6>
-                      </div>
-                    </div>
-                  ))
-                }
-
+                  }
+                  return null;
+                })}
               </div>
+
             </div>
+
             <div className='part2 col-5 flex-grow-1'>
-              {
-                dataphotos.slice(3, 5).map((el, index) => (
-                  <div className='position-relative ' key={index} data-aos="zoom-in" data-aos-offset="10" data-aos-delay="600" >
-
-                    <div id={styles.borderimg}>
-                      <img src={el.img} width={632} height={782} id={styles.img} alt="" />
+              {allnews.map((el, index) => {
+                if (index === 2 ) {
+                  return (
+                    <div key={el.newsId} className='position-relative' data-aos="zoom-in" data-aos-offset="10" data-aos-delay="600">
+                      <div id={styles.borderimg}>
+                        <img src={`/assets/${el.largPhoto}`} width={632} height={782} id={styles.img} alt="" />
+                      </div>
+                      <div className='position-absolute end-0 bottom-0 mb-3 mx-2 px-2 py-1 bg-white'>
+                        <h6>{el.title}</h6>
+                      </div>
                     </div>
-                    <div className='position-absolute end-0 bottom-0 mb-3 mx-2 px-2  py-1 bg-white'>
-                      <h5> {el.text}</h5>
-                    </div>
-                  </div>
-                ))
-              } */}
-
-
+                  )
+                }
+                return null;
+              })}
             </div>
           </div>
         </div>
@@ -232,10 +242,10 @@ export default function HomePage() {
           </div>
           <div className=' col-8 d-flex justify-content-between' data-aos="fade-up" data-aos-offset="10" data-aos-delay="450">
             {
-              infograph.map((el,index) => (
+              filterinfograf.map((el, index) => (
                 <div key={el.infoId} className='  shadow d-flex flex-column gap-3' style={{ width: "407px" }}>
                   <div id={styles.borderimg}>
-                    <img src={`/assets/${el.infoPhoto}`} id={styles.img}  alt="" />
+                    <img src={`/assets/${el.infoPhoto}`} id={styles.img} alt="" />
                   </div>
                   <p>{el.infoTitle}</p>
 
@@ -254,7 +264,12 @@ export default function HomePage() {
       </div>
       <div className='col-12 pt-5'>
         <div className={styles.bgsection2 + " d-flex justify-content-center align-items-center"} >
-          <h1 className='mb-5'>" الحصول على التطعيمات وفقاً للجدول الزمني يحمي طفلك من الأمراض المعدية" </h1>
+          {
+            filterAwarness.map((el)=>(
+
+              <h1 key={el.msgId} className='mb-5'>"{el.msgText}"</h1>
+            ))
+          }
         </div>
       </div>
       <div className='col-12'>

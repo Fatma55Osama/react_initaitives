@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 // import React, { useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -17,7 +17,11 @@ import { usedomain, useImportantlink } from '../../Store';
 
 export default function SwiperLink() {
     const {importantlink}=useImportantlink()
-    const {domain} = usedomain()
+    const [filterImportant,setfilterImportant]= useState([])
+    useEffect(()=>{
+        let copyfilterImportant = importantlink.filter((el)=>{return el.isActive})
+        setfilterImportant(copyfilterImportant)
+    },[importantlink])
 
     return (
         <div className='col-12'>
@@ -37,7 +41,7 @@ export default function SwiperLink() {
         
             >
                 {
-                    importantlink.map((el, index) => (
+                    filterImportant.sort((a,b)=>a.linkOrder - b.linkOrder).map((el, index) => (
                         <SwiperSlide key={el.linkId}>
                             <div className={styles.coverteam + " py-5 d-flex justify-content-center"} data-aos="fade-up" data-aos-offset="10" data-aos-delay='300'>
                                 <div className={ styles.owl +' owl d-flex flex-column  justify-content-center align-items-center border gap-3'} >

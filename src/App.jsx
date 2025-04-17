@@ -21,34 +21,36 @@ export default function App() {
       <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
 
-        <Route path="عن المبادرة/المبادرة في السطور" element={<h1>عن المبادرة/المبادرة في السطور</h1>} />
-        <Route path="عن المبادرة/كلمة رئيس المبادرة" element={<h1>عن المبادرة/كلمة رئيس المبادرة</h1>} />
-        <Route path="عن المبادرة/محاور المبادرة" element={<h1>عن المبادرة/محاور المبادرة</h1>} />
-        <Route path="عن المبادرة/مراحل المبادرة" element={<h1>عن المبادرة/مراحل المبادرة</h1>} />
-        <Route path="عن المبادرة/اليات التنفيذ" element={<h1>عن المبادرة/اليات التنفيذ</h1>} />
+        <Route path="about/initiativeLine" element={<h1>عن المبادرة/المبادرة في السطور</h1>} />
+        <Route path="about/speechpresident" element={<h1>عن المبادرة/كلمة رئيس المبادرة</h1>} />
+        <Route path="about/themes" element={<h1>عن المبادرة/محاور المبادرة</h1>} />
+        <Route path="about/stages" element={<h1>عن المبادرة/مراحل المبادرة</h1>} />
+        <Route path="about/implementation" element={<h1>عن المبادرة/اليات التنفيذ</h1>} />
+        <Route path="about/initiativeCenters" element={<h1>مراكز المبادرة</h1>}/>
+        <Route path="about/datainitiative" element={<h1>تاريخ المبادرة</h1>}/>
 
-        <Route path="مؤشرات المبادرة/مستهدفات المبادرة" element={<h1>مؤشرات المبادرة/مستهدفات المبادرة</h1>} />
-        <Route path="مؤشرات المبادرة/جهود المشورة" element={<h1>مؤشرات المبادرة/جهود المشورة</h1>} />
-        <Route path="مؤشرات المبادرة/مؤشرات ذات صلة" element={<h1>مؤشرات المبادرة/مؤشرات ذات صلة</h1>} />
+        <Route path="indicators/targets" element={<h1>مؤشرات المبادرة/مستهدفات المبادرة</h1>} />
+        <Route path="indicators/efforts" element={<h1>مؤشرات المبادرة/جهود المشورة</h1>} />
+        <Route path="indicators/relatedindicator" element={<h1>مؤشرات المبادرة/مؤشرات ذات صلة</h1>} />
 
-        <Route path="خدمات المبادرة/خط سير المستفيدين" element={<h1>خدمات المبادرة/خط سير المستفيدين</h1>} />
-        <Route path="خدمات المبادرة/المشورة الأسرية" element={<h1>خدمات المبادرة/المشورة الأسرية</h1>} />
-        <Route path="خدمات المبادرة/مشورة الحامل" element={<h1>خدمات المبادرة/مشورة الحامل</h1>} />
-        <Route path="خدمات المبادرة/مشورة ماقبل الزواج" element={<h1>خدمات المبادرة/مشورة ماقبل الزواج</h1>} />
-        <Route path="خدمات المبادرة/مشورة الأطفال" element={<h1>خدمات المبادرة/مشورة الأطفال</h1>} />
-        <Route path="خدمات المبادرة/نماذج مضيئة" element={<h1>خدمات المبادرة/نماذج مضيئة</h1>} />
+        <Route path="serviceinitiative/targettraffic" element={<h1>خدمات المبادرة/خط سير المستفيدين</h1>} />
+        <Route path="serviceinitiative/famliycounseling" element={<h1>خدمات المبادرة/المشورة الأسرية</h1>} />
+        <Route path="serviceinitiative/pregnantmashura" element={<h1>خدمات المبادرة/مشورة الحامل</h1>} />
+        <Route path="serviceinitiative/premarriage" element={<h1>خدمات المبادرة/مشورة ماقبل الزواج</h1>} />
+        <Route path="serviceinitiative/childrenmashura" element={<h1>خدمات المبادرة/مشورة الأطفال</h1>} />
+        <Route path="serviceinitiative/teams" element={<h1>خدمات المبادرة/نماذج مضيئة</h1>} />
 
-        <Route path="الركن الإعلامي/الأخبار" element={<h1>الركن الإعلامي/الأخبار</h1>} />
-        <Route path="الركن الإعلامي/ألبومات الصور" element={<h1>الركن الإعلامي/ألبومات الصور</h1>} />
-        <Route path="الركن الإعلامي/مكتبة الفيديو" element={<h1>الركن الإعلامي/مكتبة الفيديو</h1>} />
-        <Route path="الركن الإعلامي/قائمة الإنفوجراف" element={<h1>الركن الإعلامي/قائمة الإنفوجراف</h1>} />
-        <Route path="الركن الإعلامي/الرسائل التوعوية" element={<h1>الركن الإعلامي/الرسائل التوعوية</h1>} />
+        <Route path="mediacorner/news" element={<h1>الركن الإعلامي/الأخبار</h1>} />
+        <Route path="mediacorner/alpomphoto" element={<h1>الركن الإعلامي/ألبومات الصور</h1>} />
+        <Route path="mediacorner/vedio" element={<h1>الركن الإعلامي/مكتبة الفيديو</h1>} />
+        <Route path="mediacorner/infograph" element={<h1>الركن الإعلامي/قائمة الإنفوجراف</h1>} />
+        <Route path="mediacorner/awarenessmassage" element={<h1>الركن الإعلامي/الرسائل التوعوية</h1>} />
 
-        <Route path="تواصل معنا/أرقام التواصل" element={<h1>تواصل معنا/أرقام التواصل</h1>} />
-        <Route path="تواصل معنا/إسأل استشر" element={<h1>تواصل معنا/إسأل استشر</h1>} />
-        <Route path="تواصل معنا/أسئلة شائعة" element={<h1>تواصل معنا/أسئلة شائعة</h1>} />
-        <Route path="تواصل معنا/قائمة الإنفوجراف" element={<h1>تواصل معنا/قائمة الإنفوجراف</h1>} />
-        <Route path="تواصل معنا/رأيك يهمنا" element={<h1>تواصل معنا/رأيك يهمنا</h1>} />
+        <Route path="contactus/number" element={<h1>تواصل معنا/أرقام التواصل</h1>} />
+        <Route path="contactus/ask" element={<h1>تواصل معنا/إسأل استشر</h1>} />
+        <Route path="contactus/frequentlyask" element={<h1>تواصل معنا/أسئلة شائعة</h1>} />
+        <Route path="contactus/infograph" element={<h1>تواصل معنا/قائمة الإنفوجراف</h1>} />
+        <Route path="contactus/youropinion" element={<h1>تواصل معنا/رأيك يهمنا</h1>} />
 
       </Route>
     </Routes>

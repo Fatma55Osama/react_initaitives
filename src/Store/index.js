@@ -13,35 +13,35 @@ export const usepathes = create(() => ({
     {
       title: "تواصل معنا",
       links: [
-        { name: "أرقام التواصل", path: "تواصل معنا/أرقام التواصل" },
-        { name: "إسأل استشر", path: "تواصل معنا/إسأل استشر" },
-        { name: "أسئلة شائعة", path: "تواصل معنا/أسئلة شائعة" },
-        { name: "قائمة الإنفوجراف", path: "تواصل معنا/قائمة الإنفوجراف" },
-        { name: "رأيك يهمنا", path: "تواصل معنا/رأيك يهمنا" },
+        { name: "أرقام التواصل", path: "contactus/number"},
+        { name: "إسأل استشر", path: "contactus/ask" },
+        { name: "أسئلة شائعة", path: "contactus/frequentlyask"},
+        { name: "قائمة الإنفوجراف", path: "contactus/infograph" },
+        { name: "رأيك يهمنا", path: "contactus/youropinion" },
       ],
     },
     {
       title: "الركن الإعلامي",
       links: [
-        { name: "الأخبار", path: "الركن الإعلامي/الأخبار" },
-        { name: "ألبومات الصور", path: "الركن الإعلامي/ألبومات الصور" },
-        { name: "مكتبة الفيديو", path: "الركن الإعلامي/مكتبة الفيديو" },
-        { name: "قائمة الإنفوجراف", path: "الركن الإعلامي/قائمة الإنفوجراف" },
-        { name: "الرسائل التوعوية", path: "الركن الإعلامي/الرسائل التوعوية" },
+        { name: "الأخبار", path: "mediacorner/news" },
+        { name: "ألبومات الصور", path: "mediacorner/alpomphoto"},
+        { name: "مكتبة الفيديو", path: "mediacorner/vedio" },
+        { name: "قائمة الإنفوجراف", path:"mediacorner/infograph" },
+        { name: "الرسائل التوعوية", path:"mediacorner/awarenessmassage" },
       ],
     },
     {
       title: "خدمات المبادرة",
       links: [
-        { name: "خط سير المستفيدين", path: "خدمات المبادرة/خط سير المستفيدين" },
-        { name: "المشورة الأسرية", path: "خدمات المبادرة/المشورة الأسرية" },
-        { name: "مشورة الحامل", path: "خدمات المبادرة/مشورة الحامل" },
+        { name: "خط سير المستفيدين", path: "serviceinitiative/targettraffic"},
+        { name: "المشورة الأسرية", path: "serviceinitiative/famliycounseling" },
+        { name: "مشورة الحامل", path: "serviceinitiative/pregnantmashura" },
         {
           name: "مشورة ماقبل الزواج",
-          path: "خدمات المبادرة/مشورة ماقبل الزواج",
+          path: "serviceinitiative/premarriage",
         },
-        { name: "مشورة الأطفال", path: "خدمات المبادرة/مشورة الأطفال" },
-        { name: "نماذج مضيئة", path: "خدمات المبادرة/نماذج مضيئة" },
+        { name: "مشورة الأطفال", path: "serviceinitiative/childrenmashura" },
+        { name: "نماذج مضيئة", path: "serviceinitiative/teams" },
       ],
     },
     {
@@ -49,20 +49,23 @@ export const usepathes = create(() => ({
       links: [
         {
           name: "مستهدفات المبادرة",
-          path: "مؤشرات المبادرة/مستهدفات المبادرة",
+          path: "indicators/targets",
         },
-        { name: "جهود المشورة", path: "مؤشرات المبادرة/جهود المشورة" },
-        { name: "مؤشرات ذات صلة", path: "مؤشرات المبادرة/مؤشرات ذات صلة" },
+        { name: "جهود المشورة", path: "indicators/efforts"},
+        { name: "مؤشرات ذات صلة", path: "indicators/relatedindicator"  },
       ],
     },
     {
       title: "عن المبادرة",
       links: [
-        { name: "المبادرة في السطور", path: "عن المبادرة/المبادرة في السطور" },
-        { name: "كلمة رئيس المبادرة", path: "عن المبادرة/كلمة رئيس المبادرة" },
-        { name: "محاور المبادرة", path: "عن المبادرة/محاور المبادرة" },
-        { name: "مراحل المبادرة", path: "عن المبادرة/مراحل المبادرة" },
-        { name: "اليات التنفيذ", path: "عن المبادرة/اليات التنفيذ" },
+        { name: "المبادرة في السطور", path:"about/initiativeLine" },
+        { name: "كلمة رئيس المبادرة", path: "about/speechpresident"},
+        { name: "محاور المبادرة", path: "about/themes"},
+        { name: "مراحل المبادرة", path:"about/stages"},
+        { name: "اليات التنفيذ", path: "about/implementation"},
+        {name:'مراكز المبادرة',path:"about/initiativeCenters"},
+        {name:'تاريخ المبادرة',path:"about/datainitiative" },
+                
       ],
     },
     {
@@ -71,15 +74,15 @@ export const usepathes = create(() => ({
     },
   ],
 }));
-export const useData = create(() => ({
-  dataphotos: [
-    { img: meet1, text: "إجتماع المجلس الاقليمى للسكان برئاسة محافظ المنوفية" },
-    { img: meet2, text: "إجتماع المجلس الاقليمى للسكان برئاسة محافظ المنوفية" },
-    { img: meet3, text: "إجتماع المجلس الاقليمى للسكان برئاسة محافظ المنوفية" },
-    { img: meet4, text: "إجتماع المجلس الاقليمى للسكان برئاسة محافظ المنوفية" },
-  ],
-  setphoto: (photo) => set(() => ({ dataphotos: photo })),
-}));
+// export const useData = create(() => ({
+//   dataphotos: [
+//     { img: meet1, text: "إجتماع المجلس الاقليمى للسكان برئاسة محافظ المنوفية" },
+//     { img: meet2, text: "إجتماع المجلس الاقليمى للسكان برئاسة محافظ المنوفية" },
+//     { img: meet3, text: "إجتماع المجلس الاقليمى للسكان برئاسة محافظ المنوفية" },
+//     { img: meet4, text: "إجتماع المجلس الاقليمى للسكان برئاسة محافظ المنوفية" },
+//   ],
+//   setphoto: (photo) => set(() => ({ dataphotos: photo })),
+// }));
 export const usedomain = create(() => ({
   domain: "https://localhost:7091",
 }));
@@ -107,4 +110,19 @@ export const useNews = create((set) => ({
   allnews: [],
   setInews: (newwes) => set(() => ({ allnews: newwes })),
 }));
-
+export const useAbout = create((set) => ({
+  allabout: [],
+  setallabout: (about) => set(() => ({ allabout: about })),
+}));
+export const useAwarnessMsg = create((set) => ({
+  allawarness: [],
+  setallawarness: (awarn) => set(() => ({ allawarness: awarn })),
+}));
+export const useServicemain = create((set) => ({
+  allservice: [],
+  setservice: (serv) => set(() => ({ allservice: serv })),
+}));
+export const useGovs = create((set) => ({
+  allgovs: [],
+  setgovs: (gov) => set(() => ({ allgovs: gov })),
+}));
